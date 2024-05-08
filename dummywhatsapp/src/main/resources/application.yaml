@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dummy_whats_app
+    username: root
+    password: root1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+      static-path-pattern: /swagger**
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: false
+        ddl-auto: update
+
+  security:
+    basic:
+      enabled: false
+    ignored: /**
+
+  logging:
+    level:
+      root: INFO
+      org.springframework.web: DEBUG
+
+  freemarker:
+    templateLoaderPath: classpath:/templates/
+  resources:
+    static-locations: classpath:/static/
+
